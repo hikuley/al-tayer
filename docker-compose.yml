@@ -2,18 +2,12 @@ version: '2'
 services:
   server:
     container_name: server
+    image: nodejs-webpack-es6-image
     build:
       context: ./server/
-    command: npm start
-    volumes:
-      - ./server/:/usr/app
-      - /usr/app/node_modules
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"
-    # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
-    environment:
-      - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
+      - 3001:2000
   ui:
     container_name: ui
     build:
@@ -25,4 +19,4 @@ services:
     depends_on:
       - server
     ports:
-      - "3000:3000"
+      - 3000:3000

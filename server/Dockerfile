@@ -1,13 +1,10 @@
 FROM node:latest
 
-WORKDIR /usr/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY .. /app
 
-RUN npm install -qy
+RUN npm install
 
-COPY . .
+CMD ["npm","run","execute"]
 
-EXPOSE 8080
-
-CMD ["npm", "start"]
