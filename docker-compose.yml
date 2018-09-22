@@ -7,7 +7,7 @@ services:
       context: ./server/
       dockerfile: Dockerfile
     ports:
-      - 3001:2000
+      - 3001:3001
   ui:
     container_name: ui
     build:

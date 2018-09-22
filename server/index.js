@@ -1,14 +1,14 @@
 import express from "express";
-const app = express();
-import routes from "./src/routes";
 
-let port = 2000;
+import { routes } from "./src/util/ctrl-routs";
+import homeCtrl from "./src/controller/HomeController";
 
-app.listen(port, ()=> {
-    console.log(" server is started and listen on port [" + port + "]");
-});
 
 //all the requests will be handled by routes middleware
-app.use("/", routes);
+const app = express();
+app.use("/", routes(homeCtrl));
 
-
+let port = 3001;
+app.listen(port, () => {
+  console.log(" server is started and listen on port [" + port + "]");
+});
