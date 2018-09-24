@@ -1,15 +1,15 @@
 import express from "express";
 
-export function action(method, path) {
+export function Action(method, path) {
   return (target, name, descriptor) => {
     let routes = target._routes || (target._routes = []);
     routes.push( {method, path, fn: descriptor.value} );
   }
 }
 
-export let get = path => action('get', path);
-export let post = path => action('post', path);
-export let put = path => action('put', path);
+export let Get = path => Action('get', path);
+export let Post = path => Action('post', path);
+export let Put = path => Action('put', path);
 
 export function routes(ctrl) {
   let instance = new ctrl();

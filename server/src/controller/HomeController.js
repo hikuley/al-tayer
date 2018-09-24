@@ -1,34 +1,17 @@
-import { action, get } from "../util/ctrl-routs";
-import RequestHandlerService from "../service/RequestHandlerService";
+import {Action, Get} from "../util/HttpAnnotation";
 
-export default class HomeController {
+class HomeController {
 
-  constructor() {
+    constructor() {
 
-  }
+    }
 
-  @get("/")
-  async index(req, res) {
-    let message = await  RequestHandlerService.handleHttpRequest(req.method, req.path);
-    res.json({ message });
-  }
-
-
-  //
-  // @get("/test")
-  // test(req, res) {
-  //   res.json(
-  //     {
-  //       name: "Test",
-  //       surname: "Test",
-  //       test: "Test"
-  //     }
-  //   );
-  // }
-  //
-  // @action("post", "/foo")
-  // foo(req, res) {
-  //   res.json("bar");
-  // }
+    @Get("/")
+    index(req, res) {
+        let message = "Service is running healthily...";
+        res.json({message});
+    }
 
 }
+
+export default HomeController;
