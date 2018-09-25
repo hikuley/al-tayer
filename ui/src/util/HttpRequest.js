@@ -4,13 +4,29 @@ class HttpRequest {
 
     //token;
 
-    constructor(){
+    constructor() {
 
     }
 
-    fetch(request) {
+    fetch(requestOptions) {
         return new Promise((resolve, reject) => {
-            fetch(Constants.BASE_SERVICE_URL, request)
+
+            let url = this._createUrl(requestOptions);
+            const overriddenHeaders = requestOptions.headers || {};
+            const {method} = requestOptions;
+            const {params} = requestOptions;
+            const {body} = requestOptions;
+
+            const processedRequestOptions = {
+                ...requestOptions,
+                headers: {
+                    "Content-Type": "application/json",
+                    ...overriddenHeaders
+                },
+                timeout: Constants.HTTP_TIMEOUT_MS
+            };
+
+            fetch(url, processedRequestOptions)
                 .then(res => res.json())
                 .then(res => {
                     resolve(res);
@@ -20,6 +36,12 @@ class HttpRequest {
                     reject();
                 });
         });
+    }
+
+    _createUrl(requestOptions) {
+        let url = requestOptions.apiPath || Constants.BASE_SERVICE_URL;
+        url = requestOptions.path ? (url + requestOptions.path) : url;
+        return url;
     }
 }
 

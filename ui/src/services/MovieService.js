@@ -6,13 +6,20 @@ class MovieService {
         this.httpRequest = new HttpRequest();
     }
 
-
-    getMovieList = (request) => {
-
+    getMovieList = (params) => {
+        return this.httpRequest.fetch({
+            path: "/api/search",
+            method: "GET",
+            params: params
+        });
     };
 
-    getMovieDetail = () => {
-
+    getMovieDetail = (params) => {
+        return this.httpRequest.fetch({
+            path: "/api/detail",
+            method: "GET",
+            params: params
+        });
     };
 }
 
