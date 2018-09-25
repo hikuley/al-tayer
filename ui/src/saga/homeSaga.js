@@ -4,6 +4,7 @@ import {GET_LIST_REQUEST, getListFailure, getListSuccess} from "../redux/home/Ac
 
 
 const getListRequest = function* (action) {
+
     const response = yield call(movieService.getMovieList);
     if (response) {
         yield put(getListSuccess(response));
