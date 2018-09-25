@@ -9,6 +9,8 @@ class HttpRequest {
     }
 
     fetch(requestOptions) {
+
+
         return new Promise((resolve, reject) => {
 
             let url = this._createUrl(requestOptions);
@@ -36,6 +38,8 @@ class HttpRequest {
                     reject();
                 });
         });
+
+
     }
 
     _createUrl(requestOptions) {

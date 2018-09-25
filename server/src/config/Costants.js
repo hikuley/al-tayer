@@ -4,6 +4,6 @@ export default {
     API_KEY: "5e199acf",
     BASE_URL: "http://www.omdbapi.com/",
 
-    MOVIE_SERVICE_PATH: "/api",
-    HOME_SERVICE_PATH: "/api",
+    MOVIE_SERVICE_PATH: "/movieService",
+    HOME_SERVICE_PATH: "/movieService",
 };

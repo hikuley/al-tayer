@@ -8,7 +8,7 @@ class MovieService {
 
     getMovieList = (params) => {
         return this.httpRequest.fetch({
-            path: "/api/search",
+            path: "/movieService/search",
             method: "GET",
             params: params
         });
@@ -16,11 +16,11 @@ class MovieService {
 
     getMovieDetail = (params) => {
         return this.httpRequest.fetch({
-            path: "/api/detail",
+            path: "/movieService/detail",
             method: "GET",
             params: params
         });
     };
 }
 
-export default MovieService;
+export default new MovieService();
