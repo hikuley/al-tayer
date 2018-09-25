@@ -43,8 +43,18 @@ class HttpRequest {
     }
 
     _createUrl(requestOptions) {
+
+        const {params} = requestOptions;
         let url = requestOptions.apiPath || Constants.BASE_SERVICE_URL;
         url = requestOptions.path ? (url + requestOptions.path) : url;
+
+        if (params) {
+            url += '?';
+            for (const [key, value] of Object.entries(params)) {
+                url += `${key}=${value}&`;
+            }
+        }
+
         return url;
     }
 }

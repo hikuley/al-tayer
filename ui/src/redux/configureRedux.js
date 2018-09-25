@@ -10,6 +10,9 @@ const reducers = combineReducers({
 
 
 const sagaMiddleware = createSagaMiddleware();
+
 const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+
 sagaMiddleware.run(configureSaga);
+
 export default store;

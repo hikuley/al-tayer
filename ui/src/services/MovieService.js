@@ -8,7 +8,7 @@ class MovieService {
 
     getMovieList = (params) => {
         return this.httpRequest.fetch({
-            path: "/movieService/search",
+            path: "/api/search/",
             method: "GET",
             params: params
         });
@@ -16,7 +16,7 @@ class MovieService {
 
     getMovieDetail = (params) => {
         return this.httpRequest.fetch({
-            path: "/movieService/detail",
+            path: "/api/detail/",
             method: "GET",
             params: params
         });
