@@ -1,11 +1,11 @@
 import {Action, Get} from "../util/HttpAnnotation";
-import HttpRequest from "../util/HttpRequest";
+import MovieService from "../service/MovieService";
 import SearchResponse from "../model/SearchResponse";
 
 class SearchController {
 
     constructor() {
-        this.httpRequest = new HttpRequest();
+        this.httpRequest = new MovieService();
     }
 
     @Get("/test")

@@ -2,7 +2,7 @@ import Constants from "../config/Costants";
 import fetch from 'node-fetch';
 import NodeCache from 'node-cache';
 
-class HttpRequest {
+class MovieService {
 
     constructor() {
         const ttlSeconds = Constants.CACHE_TIMEOUT; // cache for 1 minutes
@@ -13,9 +13,9 @@ class HttpRequest {
     fetchMovies(options) {
 
         let urls = [];
-        urls.push(this.prepareUrl(options));
+        urls.push(this.prepareUrl(options)); //first url
         options.page++;
-        urls.push(this.prepareUrl(options));
+        urls.push(this.prepareUrl(options)); //second url
 
 
         let cacheKey = this.generateCacheKey(options);
@@ -29,6 +29,10 @@ class HttpRequest {
         let requests = urls.map(url => this.fetch(url));
 
         return new Promise((resolve, reject) => {
+
+            /**
+             * fetching for all url..
+             */
 
             Promise.all(requests)
 
@@ -141,4 +145,4 @@ class HttpRequest {
 
 }
 
-export default HttpRequest;
+export default MovieService;
