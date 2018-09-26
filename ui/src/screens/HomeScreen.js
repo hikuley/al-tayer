@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import '../assets/styles.css';
-import searchIcon from './../assets/search-icon.png';
+
 import {getListRequest} from '../redux/home/Actions';
+import Loading from "../components/loading/Loading";
+import TextSearch from "../components/input/TextSearch";
 
 
 class HomeScreen extends Component {
@@ -22,20 +24,19 @@ class HomeScreen extends Component {
             <div className="container">
 
                 <form className="search-container">
-                    <input id="search-bar" type="text" value={this.state.keyword} onChange={this.handleChangeInput.bind(this)}/>
-                    <a href="javascript:">
-                        <img className="search-icon" src={searchIcon}/>
-                    </a>
+                    <TextSearch onChange={this.handleChangeInput.bind(this)}/>
+                    {loadingShow ? <Loading type="bars" color="#008ABF"/> : ""}
                 </form>
 
                 {movieList && fetchDataCompleted ? this._renderMovieList() : ''}
+
+                {message ? <div className="errorMessage"><span>{message}</span></div> : ""}
 
             </div>
         )
     }
 
-    handleChangeInput(event) {
-        let keyword = event.target.value;
+    handleChangeInput(keyword) {
         this.setState({keyword});
 
         if (keyword.length >= 3) {
@@ -44,6 +45,7 @@ class HomeScreen extends Component {
                 page: 1
             });
         }
+
     }
 
     _renderMovieList = () => {

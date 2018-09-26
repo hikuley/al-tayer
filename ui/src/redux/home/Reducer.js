@@ -18,6 +18,7 @@ export default function (state = initialState, action) {
             fetchDataCompleted: false,
             loadingShow: true,
             hasError: false,
+            message:null
         }
     }
 
@@ -27,7 +28,8 @@ export default function (state = initialState, action) {
             fetchDataCompleted: true,
             movieList: payload,
             hasError: false,
-            loadingShow: false
+            loadingShow: false,
+            message:null
         }
     }
 
@@ -36,7 +38,7 @@ export default function (state = initialState, action) {
             ...state,
             fetchDataCompleted: false,
             movieList: null,
-            message: "Unexpected error.",
+            message: "There is no movie by your searching.",
             hasError: true,
             loadingShow: false
         }

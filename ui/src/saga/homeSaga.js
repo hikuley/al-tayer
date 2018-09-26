@@ -11,7 +11,7 @@ const getListRequest = function* (action) {
     const {status, data} = response;
 
     yield delay(1000);
-    if (status) {
+    if (status && data) {
         yield put(getListSuccess(data));
     }
     else {
