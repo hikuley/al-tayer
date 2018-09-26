@@ -15,10 +15,6 @@ class HttpRequest {
 
             let url = this._createUrl(requestOptions);
             const overriddenHeaders = requestOptions.headers || {};
-            const {method} = requestOptions;
-            const {params} = requestOptions;
-            const {body} = requestOptions;
-
             const processedRequestOptions = {
                 ...requestOptions,
                 headers: {
