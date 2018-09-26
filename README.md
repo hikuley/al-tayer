@@ -18,5 +18,5 @@ I used many kinds of external libraries for server and ui.
 1. redux
 2. redux-saga
 
-# The time you spent on the challenge
+### The time you spent on the challenge ###
 I spent 3 days on the challange.
