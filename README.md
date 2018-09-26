@@ -11,12 +11,12 @@ I used many kinds of external libraries for server and ui.
 1. node-cache: I preferred this library because each request must be cached according to challenge requirements.
 2. babel: I coded server with es6 and for transformation.
 3. node-fetch: Instead of implementing XMLHttpRequest in Node.js to run browser-specific
-4. babel-plugin-transform-decorators-legacy: 
-5. babel-plugin-transform-object-rest-spread: 
+4. babel-plugin-transform-decorators-legacy plugin: 
+5. babel-plugin-transform-object-rest-spread plugin: to use feature of the es6 spread 
 
 * ui
-1. redux
-2. redux-saga
+1. redux : I prefer redux to manage state of the each react component.
+2. redux-saga : I prefer redux-saga to manage actions of the reduxt.
 
 ### The time you spent on the challenge ###
-I spent 3 days on the challange, but If I had more time, I was able to write test cases for ui methods and server methods. 
+I spent 3 days on the challange, but If I had more time, I was able to write test cases for ui methods and server methods and I could make more component on the ui module.  
