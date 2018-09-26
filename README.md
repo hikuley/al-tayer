@@ -5,8 +5,13 @@ A single command to run the frontend & backend below.
 ```sh
 $ docker-compose up --build
 ```
+after if you want to access to ui module
+```sh
+http://localhost:300
+```
+
 This project includes two part of module, first module is called 'server', second module is called 'ui'
-I used many kinds of external libraries for server and ui.
+I used many kinds of external libraries for server module and ui module.
 
 * server
 1. node-cache: I preferred this library because each request must be cached according to challenge requirements.
