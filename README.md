@@ -19,4 +19,4 @@ I used many kinds of external libraries for server and ui.
 2. redux-saga
 
 ### The time you spent on the challenge ###
-I spent 3 days on the challange.
+I spent 3 days on the challange, but If I had more time, I was able to write test cases for ui methods and server methods. 
