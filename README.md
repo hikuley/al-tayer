@@ -2,8 +2,9 @@
 
 A single command to run the frontend & backend below.
 
- `docker-compose up --build`
--
+```sh
+$ docker-compose up --build
+```
 I used many kinds of external libraries for server and ui.
 
 * Server
@@ -18,3 +19,4 @@ I used many kinds of external libraries for server and ui.
 2. redux-saga
 
 # The time you spent on the challenge
+I spent 3 days on the challange.
