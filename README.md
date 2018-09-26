@@ -9,6 +9,10 @@ after if you want to access to ui module
 ```sh
 http://localhost:300
 ```
+to check rest api 
+```sh
+http://localhost:3001/api
+```
 
 This project includes two part of module, first module is called 'server', second module is called 'ui'
 I used many kinds of external libraries for server module and ui module.
