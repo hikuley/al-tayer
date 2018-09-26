@@ -5,9 +5,10 @@ A single command to run the frontend & backend below.
 ```sh
 $ docker-compose up --build
 ```
+This project includes two part of module, first module is called 'server', second module is called 'ui'
 I used many kinds of external libraries for server and ui.
 
-* Server
+* server
 1. node-cache: I preferred this library because each request must be cached according to challenge requirements.
 2. babel: I coded server with es6 and for transformation.
 3. node-fetch: Instead of implementing XMLHttpRequest in Node.js to run browser-specific
