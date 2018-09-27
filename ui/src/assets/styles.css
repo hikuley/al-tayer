@@ -6,6 +6,8 @@ body {
     width: 33.33%;
     display: block;
     margin: auto;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 input#search-bar {
@@ -15,6 +17,7 @@ input#search-bar {
     font-size: 1rem;
     border: 1px solid #D0CFCE;
     outline: none;
+    padding-left: 15px;
 }
 
 input#search-bar:focus {
@@ -47,11 +50,11 @@ input#search-bar:-ms-placeholder {
 }
 
 .search-icon {
-    position: relative;
+    position: absolute;
     float: right;
     width: 75px;
     height: 75px;
-    top: -62px;
+    top: -12px;
     right: -10px;
 }
 
@@ -60,7 +63,6 @@ input#search-bar:-ms-placeholder {
     -ms-flex-flow: wrap;
     flex-flow: wrap;
     display: -ms-flexbox;
-    display: flex;
     padding: .1vh;
     margin: auto;
     width: 900px;
@@ -69,6 +71,7 @@ input#search-bar:-ms-placeholder {
 .image-grid li {
     width: 30%;
     margin: 3px;
+    float: left;
 }
 
 .image-grid img {
@@ -91,12 +94,12 @@ input#search-bar:-ms-placeholder {
 
 }
 
-.container{
+.container {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.errorMessage{
+.errorMessage {
     text-align: center;
     margin: auto;
     width: 300px;
