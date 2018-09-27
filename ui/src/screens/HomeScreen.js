@@ -9,8 +9,8 @@ import TextSearch from "../components/input/TextSearch";
 
 class HomeScreen extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             keyword: '',
         };
