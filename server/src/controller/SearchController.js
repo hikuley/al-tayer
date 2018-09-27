@@ -5,7 +5,7 @@ import SearchResponse from "../model/SearchResponse";
 class SearchController {
 
     constructor() {
-        this.httpRequest = new MovieService();
+        this.movieService = new MovieService();
     }
 
     @Get("/test")
@@ -37,7 +37,7 @@ class SearchController {
             "page": page
         };
 
-        let movieList = await this.httpRequest.fetchMovies(requestOptions);
+        let movieList = await this.movieService.fetchMovies(requestOptions);
 
         response.json(new SearchResponse(movieList));
     }
@@ -45,14 +45,14 @@ class SearchController {
 
     @Get("/cache/clear")
     async cacheRefresh(request, response, next) {
-        await this.httpRequest.flush();
+        await this.movieService.flush();
 
         response.json({message: "ok"});
     }
 
     @Get("/cache/refresh") //TODO: BONUS
     async cacheRefresh(request, response, next) {
-        await this.httpRequest.cacheRefresh();
+        await this.movieService.cacheRefresh();
         response.json({message: "ok"});
     }
 
